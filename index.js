@@ -7,7 +7,7 @@ const path = require('path');
 //variables for the employee input
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
-const Intern = require('/lib/Intern');
+const Intern = require('./lib/Intern');
 
 //Add Inquirer input to HTML page
 const DIST_DIR = path.resolve(__dirname, 'dist')
@@ -28,13 +28,13 @@ function addNewEmployee() {
         },
 
     ]).then(val => {
-        if (val.name === "Manager") {
+        if (val.role === "Manager") {
             addManager();
-        } else if (val.name === "Engineer") {
+        } if (val.role === "Engineer") {
             addEngineer();
-        } else if (val.name === "Intern") {
+        } if (val.role === "Intern") {
             addIntern();
-        } else if (val.name === "Nobody else") {
+        } if (val.role === "Nobody else") {
             generateHTML(outputPath, render(employees));
         };
     });
@@ -70,8 +70,8 @@ function addManager() {
         employees.push(manager);
         addNewEmployee();
     });
-}
 
+}
 //Add engineer
 function addEngineer() {
     inquirer.prompt([
@@ -100,8 +100,8 @@ function addEngineer() {
         employees.push(engineer);
         addNewEmployee();
     });
-}
 
+}
 //Add engineer
 function addIntern() {
     inquirer.prompt([
@@ -126,12 +126,12 @@ function addIntern() {
             message: "What is the intern's school?",
         },
     ]).then(function(answer) {
-        let intern = new Intern(answer.engineerName, answer.engineerID, answer.engineerEmail, answer.engineerGithub)
+        let intern = new Intern(answer.internName, answer.internID, answer.internEmail, answer.internSchool)
         employees.push(intern);
         addNewEmployee();
     });
-}
 
+}
 //Generate HTML sheet
 function generateHTML() {
     fs.writeFileSync(outputPath, render(employees), "utf-8");
