@@ -1,42 +1,24 @@
-// // // //`name`
+const Employee = require('../lib/Employee');
 
-// // // * `id`
+test('creates an employee object', () => {
+    const employee = new Employee('Eddie');
+});
 
-// // // * `email`
+test('set id with constructor', () => {
+    const testValue = 100;
+    const e = new Employee('Foo', testValue);
+    expect(e.id).toBe(testValue);
+});
 
-// // // * `getName()`
+test('set email with constructor', () => {
+    const testValue = 'employee@email.com';
+    const e = new Employee('Foo', 1, testValue);
+    expect(e.email).toBe(testValue);
+});
 
-// // // * `getId()`
-
-// // // * `getEmail()`
-
-// // // * `getRole()`&mdash;returns `'Employee'`
-
-// describe("Employee", () => {
-//     describe("Create employee object", () => {
-//         it("should have a first and last name", () => {
-//             const employee = new Employee("Tony Stark", 123456, "tstark@gmail.com");
-
-//             const isFullName = () => {
-//                 if (employee.name.indexOf(' ')=== -1) {
-//                     return false
-//                 }
-//                     else return true
-//             }
-//         expect(isFullName()).toEqual(true);  
-//         })
-        
-//         it("should have an email address", () => {
-//             const employee = new Employee("Tony Stark", 123456, "tstark@gmail.com");
-
-//             const hasEmail = () => {
-//                 if (employee.name.indexOf(' ')=== -1) {
-//                     return false
-//                 }
-//                     else return true
-//             }
-//         expect(hasEmail()).toEqual(true);  
-//         })
-//     })
-    
-// })
+// Test if the getRole() value is Employee
+test('getRole() return Employee', () => {
+    const testValue = 'Employee';
+    const e = new Employee('Eddie', 1, 'employee@email.com');
+    expect(e.getRole()).toBe(testValue);
+});

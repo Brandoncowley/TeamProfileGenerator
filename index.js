@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 //variables for the employee input
+const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -15,6 +16,9 @@ const outputPath = path.join(DIST_DIR, 'index.html');
 
 //Array to add employees to
 const employees = [];
+
+//Need to grab template for output
+const render = require('./src/page-template.js');
 
 
 //Add employees
@@ -134,7 +138,7 @@ function addIntern() {
 }
 //Generate HTML sheet
 function generateHTML() {
-    fs.writeFileSync(outputPath, render(employees), "utf-8");
+    fs.writeFile(outputPath, render(employees), "utf-8");
 }
 
 addNewEmployee();
