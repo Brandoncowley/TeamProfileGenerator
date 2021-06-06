@@ -137,8 +137,13 @@ function addIntern() {
 
 }
 //Generate HTML sheet
-function generateHTML() {
-    fs.writeFile(outputPath, render(employees), "utf-8");
-}
+function generateHTML(fileName, data) {
+    fs.writeFile(fileName, data, "utf8", function (err) {
+        if (err) {
+            throw err;
+    }
+    console.log("Your team page has been generated");
+    });
+};
 
 addNewEmployee();

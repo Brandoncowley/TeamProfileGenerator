@@ -7,21 +7,21 @@ module.exports = team => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Team Profile Generator</title>
-        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <div class="container-fluid">
+    <body class = "bg-dark">
+        <div class="container-fluid bg-dark">
             <div class="row">
-                <div class="col-12 jumbotron text-white mb-3">
-                    <h1 class="text-center">Team Profile Chart</h1>
+                <div class="col-12 jumbotron bg-dark text-white mb-3">
+                    <h1 class="head-text text-center">Team Profile Chart</h1>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="main-section col-12 d-flex justify-content-center">
+                <div class="main-section col-12 d-flex bg-dark justify-content-center">
                     ${createProfile(team)}
                 </div>
             </div>

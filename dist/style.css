@@ -1,24 +1,15 @@
 body {
-    font-family: "Ubuntu", sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
-  
-  a {
-    color: #540b0e;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    color: #335c67;
-    text-decoration: none;
-  }
-  
-  .jumbotron {
-    background-color: #335c67;
+  .head-text {
+    font-size: 48px;
+    margin-top: 1.5em;
   }
   
   .main-section {
     flex-wrap: wrap;
     margin: 2em auto;
+    background-color: black;
   }
   
   .employee-card {
@@ -32,16 +23,16 @@ body {
   }
   
   .manager-card {
-    background-color: #540b0e;
-  }
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgb(92, 4, 12) 35%, rgb(255, 121, 161) 100%);
+}
   
   .engineer-card {
-    background-color: #9e2a2b;
-  }
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
   
   .intern-card {
-    background-color: #e09f3e;
-  }
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgb(27, 78, 3) 35%, rgb(132, 255, 169) 100%);
+}
   
   .card-body {
     display: flex;
